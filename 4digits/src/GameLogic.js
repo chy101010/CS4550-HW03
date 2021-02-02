@@ -26,8 +26,8 @@ export function validGuess(guesses, guess) {
     else if(isNaN(guess)) {
         return {status : -1, message: "Invalid: Require Only Numbers"};
     }
-    else if(guess.includes("0")) {
-        return {status : -1, message: "Invalid: Require 1 - 9, [0]"};
+    else if(guess[0] === ("0")) {
+        return {status : -1, message: "Invalid: 0 can't be the first digit"};
     }
     return { status: 0, message: "Guess Processed" };
 }
